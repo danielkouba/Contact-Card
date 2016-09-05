@@ -8,17 +8,24 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			//Form submit
 			$('form').submit(function(){
-				//add a new row then push elements one by one
+				//combine name inputs
 				var fullName = $('input[name=fname]').val()+ " " + $('input[name=lname]').val();
+				//create a new card div
 				$('.cardholder').append('<div class="card"></div>');
+				//add elements to the new card div
 				$('.card').last().append("<h1>" + fullName + "</h1>" );
 				$('.card').last().append("<p>Click for Description</p>")
 				$('.card').last().append("<p>" + $('textarea[name=description]').val() + "</p>" );
+				//hide the description
 				$('p').last().hide()
+				//this cleans up the form
+				$('input[type=text], textarea').val("")
 				return false
 			})
 
+			//when a card is clicked it toggles elements to be hidden or shown
 			$(document).on('click', '.card', function(){
 				$(this).children().toggle()
 				}
@@ -28,25 +35,26 @@
 </head>
 <body>
 
-<div class="col1">
-	<form action="do_nothing.html">
-		First Name: <input type="text" name="fname" placeholder="First Name">
-		<br>
-		Last Name: <input type="text" name="lname" placeholder="Last Name">
-		<br>
-		Description:
-		<br>
-		<textarea name="description" cols="40" rows="5"></textarea>
-		<br>
-		<input type="submit" value="Add User">
-	</form>
-</div>
-<div class="cardholder col2">
-	<div class="card"><h1>Michael Choi</h1>
-		<p>Click for Description</p>
-		<p style="display: none;">This is a magical description.</p>
+	<div class="col1">
+		<form action="do_nothing.html">
+			First Name: <input type="text" name="fname" placeholder="First Name">
+			<br>
+			Last Name: <input type="text" name="lname" placeholder="Last Name">
+			<br>
+			Description:
+			<br>
+			<textarea name="description" cols="40" rows="5"></textarea>
+			<br>
+			<input type="submit" value="Add User">
+		</form>
 	</div>
-</div>
+	<div class="cardholder col2">
+		<div class="card"><h1>Daniel Kouba</h1>
+			<p>Click for Description</p>
+			<p style="display: none;">This is a magical description.</p>
+		</div>
+	</div>
 	
 </body>
 </html>
+
