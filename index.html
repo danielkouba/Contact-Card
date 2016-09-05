@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Add User</title>
+	<meta name="description" content="Adding users using JQuery">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('form').submit(function(){
+				//add a new row then push elements one by one
+				$('tbody').append("<tr></tr>")
+				$('tr').last().append("<td>" + $('input[name=fname]').val() + "</td>" )
+				$('tr').last().append("<td>" + $('input[name=lname]').val() + "</td>" )
+				$('tr').last().append("<td>" + $('input[name=email]').val() + "</td>" )
+				$('tr').last().append("<td>" + $('input[name=contact]').val() + "</td>" )
+				return false
+			})
+		})
+	</script>
+</head>
+<body>
+
+<div class="col1">
+	<form action="do_nothing.html">
+		First Name: <input type="text" name="fname" placeholder="First Name">
+		<br>
+		Last Name: <input type="text" name="lname" placeholder="Last Name">
+		<br>
+		Description:
+		<br>
+		<textarea name="Text1" cols="40" rows="5"></textarea>
+		<br>
+		<input type="submit" value="Add User">
+	</form>
+</div>
+<div class="col2">
+	<p>Hello</p>
+</div>
+	
+</body>
+</html>
