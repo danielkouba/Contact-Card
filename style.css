@@ -38,3 +38,11 @@ form>*{
 	margin-top: 10px;
 }
 
+.hidden{
+	visibility: hidden;
+}
+.show{
+	visibility: visible;	
+}
+
+

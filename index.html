@@ -10,12 +10,19 @@
 		$(document).ready(function(){
 			$('form').submit(function(){
 				//add a new row then push elements one by one
-				$('tbody').append("<tr></tr>")
-				$('tr').last().append("<td>" + $('input[name=fname]').val() + "</td>" )
-				$('tr').last().append("<td>" + $('input[name=lname]').val() + "</td>" )
-				$('tr').last().append("<td>" + $('textarea[name=description]').val() + "</td>" )
+				var fullName = $('input[name=fname]').val()+ " " + $('input[name=lname]').val();
+				$('.cardholder').append('<div class="card"></div>');
+				$('.card').last().append("<h1>" + fullName + "</h1>" );
+				$('.card').last().append("<p>Click for Description</p>")
+				$('.card').last().append("<p>" + $('textarea[name=description]').val() + "</p>" );
+				$('p').last().hide()
 				return false
 			})
+
+			$(document).on('click', '.card', function(){
+				$(this).children().toggle()
+				}
+			);
 		})
 	</script>
 </head>
@@ -34,12 +41,10 @@
 		<input type="submit" value="Add User">
 	</form>
 </div>
-<div class="col2">
+<div class="cardholder col2">
 	<div class="card"><h1>Michael Choi</h1>
-		<p>click for Description</p>
-	</div>
-		<div class="card"><h1>Michael Choi</h1>
-		<p>click for Description</p>
+		<p>Click for Description</p>
+		<p style="display: none;">This is a magical description.</p>
 	</div>
 </div>
 	
