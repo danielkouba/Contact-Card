@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Add User</title>
-	<meta name="description" content="Adding users using JQuery">
+	<title>Contact Cards</title>
+	<meta name="description" content="Adding Contact Cards using JQuery">
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -13,8 +13,7 @@
 				$('tbody').append("<tr></tr>")
 				$('tr').last().append("<td>" + $('input[name=fname]').val() + "</td>" )
 				$('tr').last().append("<td>" + $('input[name=lname]').val() + "</td>" )
-				$('tr').last().append("<td>" + $('input[name=email]').val() + "</td>" )
-				$('tr').last().append("<td>" + $('input[name=contact]').val() + "</td>" )
+				$('tr').last().append("<td>" + $('textarea[name=description]').val() + "</td>" )
 				return false
 			})
 		})
@@ -30,13 +29,18 @@
 		<br>
 		Description:
 		<br>
-		<textarea name="Text1" cols="40" rows="5"></textarea>
+		<textarea name="description" cols="40" rows="5"></textarea>
 		<br>
 		<input type="submit" value="Add User">
 	</form>
 </div>
 <div class="col2">
-	<p>Hello</p>
+	<div class="card"><h1>Michael Choi</h1>
+		<p>click for Description</p>
+	</div>
+		<div class="card"><h1>Michael Choi</h1>
+		<p>click for Description</p>
+	</div>
 </div>
 	
 </body>
